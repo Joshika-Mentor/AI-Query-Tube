@@ -1,0 +1,89 @@
+machine learning tutorial
+how to setup python environment
+best practices for data science
+deep learning basics
+transformers in nlp
+computer vision applications
+reinforcement learning explained
+gradient descent algorithm
+neural network architecture
+python pandas dataframe
+matplotlib visualization
+docker containerization
+unit testing in python
+api development with flask
+deployment strategies
+cloud computing basics
+aws services overview
+google cloud platform introduction
+azure fundamentals
+linux command line basics
+git version control
+agile methodology
+scrum framework
+kanban board
+software development lifecycle
+object oriented programming
+functional programming
+data structures and algorithms
+sorting algorithms
+graph algorithms
+binary trees
+hash tables
+dynamic programming
+recursion
+big o notation
+database design
+sql queries
+nosql databases
+rest api design
+graphql vs rest
+microservices architecture
+serverless computing
+kubernetes orchestration
+ci/cd pipeline
+testing strategies
+tdd vs bdd
+code review best practices
+documentation standards
+open source contribution
+career advice for developers
+interview preparation
+salary negotiation
+remote work tips
+productivity tools
+time management
+soft skills for engineers
+leadership skills
+mentorship
+networking
+public speaking
+technical writing
+blogging for developers
+community building
+hackathons
+coding challenges
+competitive programming
+algorithm visualization
+data science projects
+machine learning projects
+web development projects
+mobile app development
+game development
+cyber security basics
+ethical hacking
+network security
+web security
+cryptography
+blockchain technology
+smart contracts
+decentralized applications
+metaverse
+virtual reality
+augmented reality
+internet of things
+robotics
+automation
+artificial intelligence ethics
+bias in ai
+future of tech

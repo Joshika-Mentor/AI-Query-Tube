@@ -1,0 +1,4 @@
+model,metric,top1_recall,top3_recall,top5_recall,mrr
+all-MiniLM-L6-v2,cosine,0.45,0.65,0.75,0.55
+all-mpnet-base-v2,cosine,0.55,0.72,0.80,0.62
+paraphrase-mpnet-base-v2,cosine,0.52,0.70,0.78,0.60

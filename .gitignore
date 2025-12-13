@@ -1,0 +1,13 @@
+
+__pycache__/
+*.pyc
+.env
+.ipynb_checkpoints/
+.DS_Store
+data/raw_videos.parquet
+data/transcripts.parquet
+data/clean_videos.parquet
+data/video_index.parquet
+data/video_embeddings.npy
+
+
