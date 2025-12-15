@@ -1,0 +1,2 @@
+API_KEY = "AIzaSyAVOQhqmU-dXiFrwBdAk5t76qKyDjR8_mM"
+CHANNEL_ID = "UCdEov4L0bpJ_h6W3sJxkfUA"
