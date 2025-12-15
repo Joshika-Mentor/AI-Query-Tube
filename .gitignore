@@ -1,0 +1,23 @@
+# API Keys and sensitive data
+config.py
+.env
+*.env
+
+# Data files
+*.csv
+*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
