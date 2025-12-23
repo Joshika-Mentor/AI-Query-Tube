@@ -31,50 +31,9 @@ AI-QueryTube improves this by using **NLP and sentence embeddings** to understan
 
 ---
 
-## 📂 Project Structure
 
-```
-AI-QueryTube/
-│
-├── app/
-│   └── gradio_app.py            # Gradio search interface
-│
-├── data/
-│   ├── raw/                     # Raw YouTube metadata
-│   ├── processed/               # Cleaned & enriched datasets
-│   ├── embeddings/              # Vector embeddings
-│   └── reports/
-│       └── WEEK2_EDA/            # EDA plots (PNG)
-│
-├── notebooks/
-│   ├── week1_youtube_api.ipynb
-│   ├── week2_eda.ipynb
-│   ├── week3_transcripts.ipynb
-│   ├── week4_cleaning.ipynb
-│   ├── week5_model_evaluation.ipynb
-│   ├── week6_embeddings.ipynb
-│   ├── week7_semantic_search.ipynb
-│   └── week8_gradio_demo.ipynb
-│
-├── scripts/
-│   └── run_pipeline.py           # End-to-end pipeline runner
-│
-├── src/
-│   ├── youtube_api.py
-│   ├── transcript_fetcher.py
-│   ├── text_cleaning.py
-│   ├── embedding_utils.py
-│   ├── evaluation.py
-│   └── search.py
-│
-├── logs/
-│   └── failed_transcripts.txt
-│
-├── requirements.txt
-└── README.md
-```
 
----
+
 
 ## 🛠️ Technologies Used
 
