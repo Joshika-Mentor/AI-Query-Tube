@@ -3,3 +3,4 @@ inspect_yt.py
 output.txt
 verify_install.py
 fetch.log
+debug_output.txt
