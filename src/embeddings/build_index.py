@@ -2,39 +2,49 @@ import argparse
 import pandas as pd
 import numpy as np
 import os
-from src.embeddings.embed_models import Embedder
-import faiss
+from loguru import logger
+import sys
 
-def build_index(data_path, model_name, output_dir):
+# Fix imports
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.abspath(os.path.join(current_dir, '../../'))
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
+
+from src.embeddings.embed_models import load_model
+
+def build_index(data_path, model_name, out_index_path, out_emb_path):
+    if not os.path.exists(data_path):
+        logger.error(f"Data file {data_path} not found.")
+        return
+
+    logger.info(f"Loading data from {data_path}...")
     df = pd.read_parquet(data_path)
-    print(f"Loading model {model_name}...")
-    embedder = Embedder(model_name)
     
-    print(f"Embedding {len(df)} documents...")
-    embeddings = embedder.encode(df['text_to_embed'].tolist())
+    logger.info(f"Loading model {model_name}...")
+    embedder = load_model(model_name)
     
-    # Save Embeddings
-    os.makedirs(output_dir, exist_ok=True)
-    np.save(os.path.join(output_dir, "video_embeddings.npy"), embeddings)
+    logger.info("Encoding phrases...")
+    embeddings = embedder.encode(df["text"].tolist(), show_progress_bar=True)
     
-    # Build FAISS Index (L2 or InnerProduct? sentence-transformers often normalized -> InnerProduct == Cosine)
-    d = embeddings.shape[1]
-    # Use Inner Product (since normalized)
-    index = faiss.IndexFlatIP(d)
-    index.add(embeddings)
+    logger.info(f"Saving embeddings to {out_emb_path}...")
+    os.makedirs(os.path.dirname(out_emb_path), exist_ok=True)
+    np.save(out_emb_path, embeddings)
     
-    faiss.write_index(index, os.path.join(output_dir, "video_index.faiss"))
+    logger.info(f"Saving dataframe index to {out_index_path}...")
+    df.to_parquet(out_index_path, index=False)
     
-    # Save metadata/mapping
-    df.reset_index(drop=True).to_parquet(os.path.join(output_dir, "video_index.parquet"))
+    logger.success("Index build complete.")
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--data", required=True)
+    parser.add_argument("--model_name", default="all-MiniLM-L6-v2")
+    parser.add_argument("--out_index", required=True)
+    parser.add_argument("--out_embeddings", required=True)
+    args = parser.parse_args()
     
-    print(f"Index built and saved to {output_dir}")
+    build_index(args.data, args.model_name, args.out_index, args.out_embeddings)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--data", default="data/clean_videos.parquet")
-    parser.add_argument("--model", default="all-MiniLM-L6-v2")
-    parser.add_argument("--out_dir", default="data/")
-    
-    args = parser.parse_args()
-    build_index(args.data, args.model, args.out_dir)
+    main()

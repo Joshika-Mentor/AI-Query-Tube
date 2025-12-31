@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smarttube"
+version = "0.1.0"
+description = "AI Semantic Search for YouTube"
+readme = "README.md"
+authors = [
+  { name = "User", email = "user@example.com" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "requests",
+    "google-api-python-client",
+    "youtube-transcript-api",
+    "sentence-transformers",
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "faiss-cpu",
+    "pyarrow",
+    "fastparquet",
+    "gradio",
+    "matplotlib",
+    "tqdm",
+    "loguru",
+    "python-dotenv",
+    "jupyter",
+    "ipykernel",
+    "pytest"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/smarttube"
+"Bug Tracker" = "https://github.com/yourusername/smarttube/issues"

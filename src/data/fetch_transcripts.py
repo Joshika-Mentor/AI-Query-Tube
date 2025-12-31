@@ -27,17 +27,23 @@ def fetch_transcripts(input_file, output_file):
         
         try:
             # Fetch transcript (English preferred, auto-generated acceptable)
-            transcript_list = YouTubeTranscriptApi.get_transcript(video_id, languages=['en', 'en-US'])
+            # Instantiate API (Note: In loop might be less efficient but safe)
+            api = YouTubeTranscriptApi() 
+            transcript_list = api.fetch(video_id, languages=['en', 'en-US'])
             
-            # Combine text
-            full_text = " ".join([t['text'] for t in transcript_list])
+            # Combine text (handle object attributes)
+            full_text = " ".join([t.text for t in transcript_list])
             
             result['transcript'] = full_text
             result['transcript_available'] = True
             
-        except (TranscriptsDisabled, NoTranscriptFound):
+        except (TranscriptsDisabled, NoTranscriptFound) as e:
             result['error'] = "No transcript available"
         except Exception as e:
+            # Fallback for old API just in case or other errors
+            if "has no attribute 'fetch'" in str(e):
+                 # Try static method logic for backward compat? No, assume new.
+                 pass
             result['error'] = str(e)
             
         results.append(result)

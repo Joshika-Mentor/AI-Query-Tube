@@ -28,6 +28,9 @@ class Embedder:
         )
         return embeddings
 
+def load_model(model_name="all-MiniLM-L6-v2"):
+    return Embedder(model_name)
+
 if __name__ == "__main__":
     # Test
     e = Embedder()

@@ -1,6 +1,6 @@
-# QueryTube: AI Semantic Search for YouTube
+# SmartTube: AI Semantic Search for YouTube
 
-QueryTube is a local semantic search engine that allows you to search through a YouTube channel's videos using natural language. It indexes video transcripts and metadata to find the most relevant content.
+SmartTube is a local semantic search engine that allows you to search through a YouTube channel's videos using natural language. It indexes video transcripts and metadata to find the most relevant content.
 
 ## Features
 - **Semantic Search**: Find videos by meaning, not just keywords.
@@ -12,6 +12,11 @@ QueryTube is a local semantic search engine that allows you to search through a 
 
 1. **Clone the repository** (or download the files).
 2. **Install Dependencies**:
+   You can install the package and its dependencies using pip:
+   ```bash
+   pip install -e .
+   ```
+   Or strictly from requirements:
    ```bash
    pip install -r requirements.txt
    ```
