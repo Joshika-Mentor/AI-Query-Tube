@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueryTube | AI Semantic Search</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Ambient Background -->
+    <div class="bg-glow"></div>
+
+    <main class="container">
+
+        <!-- Header -->
+        <header>
+            <div class="logo-wrapper">
+                <i class="fa-brands fa-youtube logo-icon"></i>
+                <h1>Query<span>Tube</span></h1>
+            </div>
+            <p class="tagline">Unlock the power of <span class="highlight">Semantic Search</span></p>
+        </header>
+
+        <!-- Search Section -->
+        <div class="search-container">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Describe the video moment you're looking for..."
+                    autocomplete="off">
+                <button id="searchBtn" class="search-btn">Search</button>
+            </div>
+        </div>
+
+        <!-- Feedback & Loading -->
+        <div id="loader" class="loading-state hidden">
+            <div class="loader"></div>
+            <p class="loading-text">Analyzing video semantics...</p>
+        </div>
+
+        <!-- Results -->
+        <div id="resultsGrid" class="results-grid"></div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
