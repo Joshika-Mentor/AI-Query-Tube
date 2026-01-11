@@ -1,0 +1,31 @@
+
+📊 QUERYTUBE AI - SEMANTIC SEARCH ENGINE
+
+Dataset Statistics:
+- Total Videos Collected: 48
+- Videos with Transcripts: 31
+- Embedding Dimension: 384
+
+Model Configuration:
+- Selected Model: all-MiniLM-L6-v2
+- Similarity Metrics: Cosine, Euclidean, Manhattan
+- Default Top-K: 5
+
+Files Generated:
+✓ youtube_metadata.csv
+✓ youtube_data_with_transcripts.csv
+✓ youtube_video_index.parquet
+✓ youtube_video_metadata_final.csv
+
+Features:
+✓ Semantic search using transformer embeddings
+✓ Multiple similarity metrics
+✓ Adjustable threshold filtering
+✓ Interactive Gradio interface
+✓ Embedded video previews
+
+Next Steps:
+- Fine-tune threshold values
+- Add more evaluation queries
+- Implement query expansion
+- Add filters (date, duration, etc.)
