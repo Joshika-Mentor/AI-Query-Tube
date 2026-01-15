@@ -13,3 +13,4 @@ data/
 # OS / Editor
 .vscode/
 .DS_Store
+.env
