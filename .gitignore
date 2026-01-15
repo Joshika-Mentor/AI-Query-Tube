@@ -1,0 +1,15 @@
+# Virtual environment
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Data files (optional – recommended)
+data/
+*.npy
+
+# OS / Editor
+.vscode/
+.DS_Store
