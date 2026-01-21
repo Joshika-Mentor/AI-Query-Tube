@@ -1,0 +1,251 @@
+:root {
+    --bg-dark: #0a0a0a;
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --accent-red: #ff0000;
+    --accent-glow: rgba(255, 0, 0, 0.4);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND */
+.background-glow {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, #141414 0%, #000 80%);
+    z-index: -1;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    padding: 80px 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* BRANDING */
+.branding {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    font-size: 3rem;
+    color: var(--accent-red);
+    text-shadow: 0 0 20px var(--accent-glow);
+}
+
+.branding h1 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.branding span {
+    color: var(--accent-red);
+}
+
+.branding p {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+}
+
+/* SEARCH */
+.search-box-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.search-box {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+}
+
+.search-icon {
+    margin-left: 20px;
+    color: var(--text-muted);
+}
+
+.search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+.search-box button {
+    background: var(--accent-red);
+    border: none;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.search-box button:hover {
+    background: #ff3333;
+}
+
+/* LOADING */
+.hidden {
+    display: none !important;
+}
+
+#loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: var(--accent-red);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* RESULTS GRID */
+#results {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* VIDEO CARD */
+.video-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+}
+
+.video-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* VIDEO INFO */
+.video-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ✅ FIXED LINE CLAMP (NO WARNINGS) */
+.video-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+}
+
+.video-info p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+}
+
+/* BUTTON */
+.video-btn {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.video-btn:hover {
+    background: var(--accent-red);
+}
+
+/* SCORE BADGE */
+.score-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--accent-red);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid var(--accent-red);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .branding h1 {
+        font-size: 2.5rem;
+    }
+
+    .search-box button {
+        padding: 12px 25px;
+    }
+}
