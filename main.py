@@ -29,7 +29,7 @@ except Exception as e:
     print(f"Error loading model: {e}")
     raise e
  
-API_KEY = os.environ.get("YOUTUBE_API_KEY", "AIzaSyAuPiFnbTL1911kG2Lv7d5jAZ6kvmMYsIs")
+API_KEY = os.environ.get("YOUTUBE_API_KEY", " ")
  
 def get_youtube_service():
     if API_KEY == "YOUR_YOUTUBE_API_KEY":
@@ -114,4 +114,5 @@ if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000)
 
  
+
  
